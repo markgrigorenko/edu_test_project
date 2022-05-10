@@ -8,11 +8,11 @@
           type="text"
           placeholder="Название"/>
       <my-input
-          v-model="post.body"
+          v-model="post.description"
           type="text"
           placeholder="Описание"/>
       <my-input
-          v-model="post.date"
+          v-model="post.leadTime"
           type="text"
           placeholder="Дэдлайн"/>
       <my-button
@@ -35,23 +35,23 @@ export default {
     return {
       post: {
         title: this.titleHandler(),
-        body: this.bodyHandler(),
-        date: this.dateHandler(),
+        description: this.bodyHandler(),
+        leadTime: this.dateHandler(),
+        iD: Date.now()
       },
     }
   },
 
   methods: {
     createPost() {
-      this.post.id = Date.now()
       this.$emit('create', this.post)
       this.post = {
         title: '',
-        body: '',
-        date: '',
+        iD: '',
+        description: '',
+        leadTime: '',
       }
     },
-
     titleHandler() {
       if (this.editedPost === '') {
         return ''
@@ -66,7 +66,7 @@ export default {
         return ''
       }
       else {
-        return this.editedPost.body
+        return this.editedPost.description
         this.editedPost = ''
       }
     },
@@ -75,7 +75,7 @@ export default {
         return ''
       }
       else {
-        return this.editedPost.date
+        return this.editedPost.leadTime
         this.editedPost = ''
       }
     },

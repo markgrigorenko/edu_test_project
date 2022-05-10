@@ -5,14 +5,21 @@
     </div>
     <div class="navbar__btns">
       <button class="headerBtn" @click="$router.push('/posts')" style="margin-right:20px">Задачи</button>
-      <button class="headerBtn" @click="$router.push('/')"  style="margin-right:20px">Выйти</button>
-      <button class="headerBtn" @click="$router.push('/about')">Справка</button>
+      <button class="headerBtn" @click=outUser  style="margin-right:20px">Выйти</button>
+<!--      <button class="headerBtn" @click="$router.push('/about')">Справка</button>-->
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    outUser() {
+      this.$router.push('/')
+      localStorage.clear()
+    }
+}
+
 }
 </script>
 

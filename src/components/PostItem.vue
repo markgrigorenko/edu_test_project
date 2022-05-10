@@ -2,16 +2,15 @@
   <div class="post">
     <div>
 <!--      <div> {{post.id}}</div>-->
-      <div> выполнить к: {{post.date}}</div>
+      <div> выполнить к: {{post.leadTime}}</div>
       <div> <strong> {{post.title}} </strong> </div>
-      <div> {{post.body}} </div>
+      <div> {{post.description}} </div>
     </div>
 
     <div class="post__btns">
 <!--      <my-button
       @click="$router.push(`/posts/${post.id}`)"
       >Открыть</my-button>-->
-
       <my-button @click="$emit('update', post)"
       >Изменить</my-button>
 
@@ -48,5 +47,4 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-
 </style>

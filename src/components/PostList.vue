@@ -1,11 +1,11 @@
 <template>
   <div v-if="posts.length > 0">
-    <h4  style="font-family: 'Days One'; cursor: default; color: #7E7E7E;">{{posts[0].title}}</h4>
+    <h4  style="font-family: 'Days One'; cursor: default; color: #7E7E7E;">{{posts[0].leadTime}}</h4>
     <transition-group name="user-list">
       <post-item
           v-for="post in posts"
           :post="post"
-          :key="post.id"
+          :key="post.iD"
           @remove="$emit('remove', post)"
           @update="$emit('update', post)"
       />
@@ -14,7 +14,6 @@
 <!--  <h2 v-else>
     Список постов пуст
   </h2>-->
-
 </template>
 
 <script>

@@ -15,7 +15,6 @@ directives.forEach(directive => {
     app.directive(directive.name, directive)
 })
 
-
 app
     .use(router)
     .mount('#app')
